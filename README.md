@@ -3,6 +3,9 @@
 **NOTE:** Consider this plugin experimental. It is not heavily tested yet.
 
 ---
+![](screenshots/demo_regex.png)
+
+
 Normally, you don't encounter dedicated file types for regexes; still, it is nice to have syntax highlighting for regex embedded into somewhere else (e.g., in `markdown` fences or within string literals in programming languages).
 
 This plugin provides syntax highlight for two regex flavors: Python and PCRE. It uses distinct highlight groups for different syntax elements. E.g., character classes, boundaries of group constructs, anchors and backreferences are all highlighted differently (depending on your color scheme). The backslash used for escaping (i.e. non-literal `\`) is highlighted with comment style, and all characters without special meaning are highlighted as normal strings (including tokens within character classes, which otherwise would have a special meaning). Some incorrect syntax elements are highlighted as errors: invalid group constructs, quantifiers following unquantifiable tokens, POSIX character sets outside brackets (PCRE only), etc. However, there is no semantic analysis. E.g., backreferences are not checked and highlighted normally even if referring to a non-existing group.
