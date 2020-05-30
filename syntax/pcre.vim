@@ -67,8 +67,6 @@ syntax match pcreBackreference "\v(([^\\]|^)\\(\\\\)*)@<!\\k\{\a\w*\}"
 syntax match pcreBackreference "\v(([^\\]|^)\\(\\\\)*)@<!\\k\<\a\w*\>"
 syntax match pcreBackreference "\v(([^\\]|^)\\(\\\\)*)@<!\\k\'\a\w*\'"
 syntax match pcreBackreferenceInvalid "\v(([^\\]|^)\\(\\\\)*)@<!\\k\ze[^'<{]"
-" python backreference syntax supported
-syntax match pcreBackreference "\v\C(([^\\]|^)\\(\\\\)*)@<!\(\?P\=[a-zA-Z_][a-zA-Z0-9_&]{,31}\)"
 
 syntax match pcreOctalChar "\v(([^\\]|^)\\(\\\\)*)@<!\\\o{3}"
 
@@ -76,6 +74,9 @@ syntax match pcreOctalChar "\v(([^\\]|^)\\(\\\\)*)@<!\\\o{3}"
 syntax region pcreGroup matchgroup=pcreGroupBoundary start="\v(([^\\]|^)\\(\\\\)*)@<!\(\ze[^?+*]" end="\v(([^\\]|^)\\(\\\\)*)@<!\)" contains=ALLBUT,pcreCharSetDash
 
 syntax region pcreGroupInvalid matchgroup=pcreGroupInvalidBoundary start="\v(([^\\]|^)\\(\\\\)*)@<!\(\?" end="\v(([^\\]|^)\\(\\\\)*)@<!\)" contains=ALLBUT,pcreCharSetDash
+
+" python backreference syntax supported
+syntax match pcreBackreference "\v\C(([^\\]|^)\\(\\\\)*)@<!\(\?P\=[a-zA-Z_][a-zA-Z0-9_&]{,31}\)"
 
 syntax match pcreFlag "\v\C(([^\\]|^)\\(\\\\)*)@<!\(\?[imsx]+\)"
 
