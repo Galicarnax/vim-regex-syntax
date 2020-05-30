@@ -61,7 +61,7 @@ The `end` pattern here ensures to match a single quote only if it is not escaped
 The `EnableEmbeddedSyntaxHighlight` function is not tied to regex; it might be used to embed any other syntax. E.g., to highlight SQL code blocks inside C++ strings `R"sql(...)sql"`, use
 
 ```
-au FileType cpp call EnableEmbeddedSyntaxHighlight('sql', "\\C\\<R\\\"==(", ")==\\\"", 'Comment')
+au FileType cpp call EnableEmbeddedSyntaxHighlight('sql', "\\C\\<R\\\"sql(", ")sql\\\"", 'Comment')
 ```
 
 # Installation
